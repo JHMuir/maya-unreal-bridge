@@ -1,4 +1,4 @@
-# This script simply automates saving the maya plug-in file, saving a lot of time when debugging or making changes
+# This script simply automates saving the maya plug-in to the devKit directory, saving a lot of time when debugging or making changes
 
 import shutil
 from pathlib import Path
@@ -17,10 +17,8 @@ try:
 
     destination.mkdir(parents=True, exist_ok=True)
 
-    # Construct the destination file path
     destination_file = destination / source.name
 
-    # Copy the file
     shutil.copy2(source, destination_file)
     print(f"Successfully copied {source.name} to {destination}")
 
